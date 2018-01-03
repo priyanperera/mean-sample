@@ -2,18 +2,18 @@ import { Component } from '@angular/core';
 import { ApiService } from './api.service';
 
 @Component({
-  selector: 'messages',
+  selector: 'users',
   template: `
-    <div *ngFor="let message of apiService.messages">
-    <mat-card>{{message.message}}</mat-card>
+    <div *ngFor="let user of apiService.users">
+    <mat-card>{{user.email}}</mat-card>
     </div>`
 })
 
-export class MessagesComponent {
+export class UsersComponent {
   constructor(private apiService: ApiService){
   }
 
   ngOnInit(){
-    this.apiService.getMessages();
+    this.apiService.getUsers();
   }
 }
